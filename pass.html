@@ -5,7 +5,6 @@
             Pass Phrase Validator
         </title>
     </head>
-
     <body>
 
         <h2>Pass phrase by Vitaliy Tsytsyk</h2>
@@ -22,11 +21,9 @@
             <input type="button" onclick="processPhrase(form1_secretphrase, form1_phrase)" value="Check the phrase">
         </form>
 
-
         <p id="result"></p>
 
         <script> 
-
         var correct = 0
         var wrong = 0
 
@@ -37,14 +34,15 @@
             
             out = document.getElementById("result")
             if(secretphrase.localeCompare(phrase) == 0){
+                alert ("Access allowed")
                 correct++
-                out.innerHTML = "Access allowed. correct = " + correct
+                out.innerHTML = "correct = " + correct + ", wrong = " + wrong
             } else {
+                alert ("Access denied")
                 wrong++
-                out.innerHTML = "Access denied. wrong = " + wrong
+                out.innerHTML = "correct = " + correct + ", wrong = " + wrong
             }
         }
         </script>
-
     </body>
 </html> 
