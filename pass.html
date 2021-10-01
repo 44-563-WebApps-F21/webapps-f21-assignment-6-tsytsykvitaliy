@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Pass Phrase Validator
+        </title>
+    </head>
+
+    <body>
+
+        <h2>Pass phrase by Vitaliy Tsytsyk</h2>
+
+        <form>
+            <label for="form1_secretphrase">Enter the secret phrase</label>
+            <input type ="password" id="form1_secretphrase" name="form1_secretphrase" placeholder="Let me in"> 
+            <br>
+
+            <label for="form1_phrase">Enter a phrase</label>
+            <input type ="text" id="form1_phrase" name="form1_phrase">
+            <br>
+
+            <input type="button" onclick="processPhrase(form1_secretphrase, form1_phrase)" value="Check the phrase">
+        </form>
+
+
+        <p id="result"></p>
+
+        <script> 
+
+        var correct = 0
+        var wrong = 0
+
+        function processPhrase (form1_secretphrase, form1_phrase){
+            console.log("Getting form values")
+            secretphrase = document.getElementById("form1_secretphrase").value
+            phrase = document.getElementById("form1_phrase").value   
+            
+            out = document.getElementById("result")
+            if(secretphrase.localeCompare(phrase) == 0){
+                correct++
+                out.innerHTML = "Access allowed. correct = " + correct
+            } else {
+                wrong++
+                out.innerHTML = "Access denied. wrong = " + wrong
+            }
+        }
+        </script>
+
+    </body>
+</html> 
