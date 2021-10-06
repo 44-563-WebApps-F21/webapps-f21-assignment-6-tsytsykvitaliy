@@ -23,11 +23,16 @@
 
         <p id="result"></p>
 
+        <div>
+            <img src="Turkey.png" style="height: 200px; width: 200px;" id="animal" onclick="newImage()">
+        </div>
+
         <script> 
         var correct = 0
         var wrong = 0
+        var usingImage = 1
 
-        function processPhrase (form1_secretphrase, form1_phrase){
+        function processPhrase(form1_secretphrase, form1_phrase) {
             console.log("Getting form values")
             secretphrase = document.getElementById("form1_secretphrase").value
             phrase = document.getElementById("form1_phrase").value   
@@ -41,6 +46,22 @@
                 alert ("Access denied")
                 wrong++
                 out.innerHTML = "correct = " + correct + ", wrong = " + wrong
+            }
+        }
+        function newImage() {
+            switch (usingImage) {
+                case 1: 
+                    document.getElementById("animal").src="Laika.png";
+                    usingImage = 2
+                    break;
+                case 2: 
+                    document.getElementById("animal").src="Tuna.png";
+                    usingImage = 3
+                    break;
+                case 3: 
+                    document.getElementById("animal").src="Turkey.png";
+                    usingImage = 1
+                    break;
             }
         }
         </script>
