@@ -52,16 +52,16 @@
                 result = 0
                 operatiom = ""
                 if (document.getElementById("rg1_plus").checked) {
-                    result = base + exponent
+                    result = +base + +exponent
                     operation = " + "
                 } if (document.getElementById("rg1_minus").checked) {
-                    result = base - exponent
+                    result = +base - +exponent
                     operation = " - "
                 } if (document.getElementById("rg1_times").checked) {
-                    result = base * exponent
+                    result = +base * +exponent
                     operation = " * "
                 } if (document.getElementById("rg1_divide").checked) {
-                    result = base / exponent
+                    result = +base / +exponent
                     operation = " / "
                 }
                 out = document.getElementById("form2_result")
