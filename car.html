@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            Car Ordering Checklist
+        </title>
+    </head>
+    <body>
+        <h2>Vitaliy orders a car</h2>
+        <form>
+            <label for="form1_electric">Electric</label>
+            <input type ="checkbox" id="form1_electric" name="form1_electric"> <br>
+
+            <label for="form1_ac">AC</label>
+            <input type ="checkbox" id="form1_ac" name="form1_ac"> <br>
+
+            <label for="form1_gps">GPS</label>
+            <input type ="checkbox" id="form1_gps" name="form1_gps"> <br>
+
+            <input type="button" onclick="orderCar()" value="Order a car">
+        </form>
+        <p id="result"></p>
+
+        <script> 
+            var my_car = {}
+            function orderCar() {
+                my_car = {
+                    electric: document.getElementById("form1_electric").checked,
+                    ac: document.getElementById("form1_ac").checked,
+                    gps: document.getElementById("form1_gps").checked,
+                }
+                out = document.getElementById("result")
+                out.innerHTML = JSON.stringify(my_car)
+            }
+        </script>
+    </body>
+</html> 
