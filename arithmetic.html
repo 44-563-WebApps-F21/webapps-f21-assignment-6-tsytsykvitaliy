@@ -18,18 +18,55 @@
 
             <input type="button" onclick="powers()" value="Compute">
         </form>
-        <p id="result"></p>
+        <p id="form1_result"></p>
+
+        <form>
+            <input type="radio" id="rg1_plus" name="plus" value="plus" onclick="processRadio()">
+            <label for="rg1_red">+</label> </br>
+        
+            <input type="radio" id="rg1_minus" name="minus" value="minus" onclick="processRadio()">
+            <label for="rg1_minus">-</label> </br>
+        
+            <input type="radio" id="rg1_times" name="times" value="times" onclick="processRadio()">
+            <label for="rg1_times">*</label> </br>
+
+            <input type="radio" id="rg1_divide" name="divide" value="divide" onclick="processRadio()">
+            <label for="rg1_divide">/</label> </br>
+        </form>
+        <p id="form2_result"></p>
 
         <script> 
             function powers() {
-                var base = document.getElementById("form1_base").value
-                var exponent = document.getElementById("form1_exp").value
-                var result = ""
-                out = document.getElementById("result")
+                base = document.getElementById("form1_base").value
+                exponent = document.getElementById("form1_exp").value
+                result = ""
+                out = document.getElementById("form1_result")
                 for (let i = 1; i <= exponent; i++) {
                     result += Math.pow(base, i) + " "
                 }
                 out.innerHTML = "Powers of " + base + " are: " + result
+            }
+            function processRadio() {
+                base = document.getElementById("form1_base").value
+                exponent = document.getElementById("form1_exp").value
+                result = 0
+                operatiom = ""
+                if (document.getElementById("rg1_plus").checked) {
+                    result = base + exponent
+                    operation = " + "
+                } if (document.getElementById("rg1_minus").checked) {
+                    result = base - exponent
+                    operation = " - "
+                } if (document.getElementById("rg1_times").checked) {
+                    result = base * exponent
+                    operation = " * "
+                } if (document.getElementById("rg1_divide").checked) {
+                    result = base / exponent
+                    operation = " / "
+                }
+                out = document.getElementById("form2_result")
+                // No text to replacee listed in the instruction, so making my own
+                out.innerHTML = "Result of operation " + base + operation + exponent + " equals " + result
             }
         </script>
     </body>
