@@ -19,7 +19,18 @@
 
             <input type="button" onclick="orderCar()" value="Order a car">
         </form>
-        <p id="result"></p>
+        <p id="form1_result"></p>
+
+        <form>
+            <label for="form2_property">Enter a property</label>
+            <input type ="text" id="form2_property" name="form2_property" value="color"> <br>
+
+            <label for="form2_property_value">Enter a value</label>
+            <input type ="text" id="form2_property_value" name="form2_property_value"> <br>
+
+            <input type="button" onclick="updateCar()" value="Update the car">
+        </form>
+        <p id="form2_result"></p>
 
         <script> 
             var my_car = {}
@@ -29,7 +40,14 @@
                     ac: document.getElementById("form1_ac").checked,
                     gps: document.getElementById("form1_gps").checked,
                 }
-                out = document.getElementById("result")
+                out = document.getElementById("form1_result")
+                out.innerHTML = JSON.stringify(my_car)
+            }
+            function updateCar() {
+                property = document.getElementById("form2_property").value
+                value = document.getElementById("form2_property_value").value
+                my_car[property] = value
+                out = document.getElementById("form2_result")
                 out.innerHTML = JSON.stringify(my_car)
             }
         </script>
