@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+ 
+    <head>
+        <title>
+            Computing Base to Powers
+        </title>
+    </head>
+
+    <body>
+        <h2>Vitaliy computes</h2>
+        <form>
+            <label for="form1_base">Enter a base</label>
+            <input type ="number" id="form1_base" name="form1_base" value=10> <br>
+
+            <label for="form1_exp">Enter an exponent</label>
+            <input type ="number" id="form1_exp" name="form1_exp" value="2"> <br>
+
+            <input type="button" onclick="powers()" value="Compute">
+        </form>
+        <p id="result"></p>
+
+        <script> 
+            function powers() {
+                var base = document.getElementById("form1_base").value
+                var exponent = document.getElementById("form1_exp").value
+                var result = ""
+                out = document.getElementById("result")
+                for (let i = 1; i <= exponent; i++) {
+                    result += Math.pow(base, i) + " "
+                }
+                out.innerHTML = "Powers of " + base + " are: " + result
+            }
+        </script>
+    </body>
+</html> 
